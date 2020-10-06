@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.all(25.0),
                 //child: new FlutterLogo(),
                 child: new Image(
-                    image: new AssetImage("images/logo.png")),
+                    image: new AssetImage("assets/images/logo.png")),
               ),
             ),
             new Divider(

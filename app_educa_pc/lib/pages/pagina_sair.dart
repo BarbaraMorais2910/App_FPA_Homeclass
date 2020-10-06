@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class fragmentoTree extends StatefulWidget {
+class PaginaSair extends StatefulWidget {
   @override
-  _fragmentoTreeState createState() => _fragmentoTreeState();
+  _PaginaSairState createState() => _PaginaSairState();
 }
 
-class _fragmentoTreeState extends State<fragmentoTree> {
+class _PaginaSairState extends State<PaginaSair> {
   @override
   Widget build(BuildContext context) {
     return Container(
         child: new Center(
-          child: new Text("Sair"),
+          child: new Text("Sair 5"),
         )
     );
   }

@@ -1,22 +1,22 @@
-import 'disciplina_lib/category_list_view.dart';
-import 'package:app_educa_pc/pages/disciplina_lib/course_info_screen.dart';
-import 'package:app_educa_pc/pages/disciplina_lib/popular_course_list_view.dart';
+import 'disciplina_lib/filter_list_view.dart';
+import 'package:app_educa_pc/pages/disciplina_lib/todas_disciplina_list_view.dart';
 import 'package:app_educa_pc/main.dart';
 import 'package:flutter/material.dart';
-import 'package:app_educa_pc/pages/disciplina_lib/design_course_app_theme.dart';
+import 'package:app_educa_pc/pages/disciplina_lib/app_theme.dart';
 
-class DesignCourseHomeScreen extends StatefulWidget {
+
+class PaginaDisciplina extends StatefulWidget {
   @override
-  _DesignCourseHomeScreenState createState() => _DesignCourseHomeScreenState();
+  _PaginaDisciplinaState createState() => _PaginaDisciplinaState();
 }
 
-class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
+class _PaginaDisciplinaState extends State<PaginaDisciplina> {
   CategoryType categoryType = CategoryType.ui;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: DesignCourseAppTheme.nearlyWhite,
+      color: AppTheme.nearlyWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Column(
@@ -59,7 +59,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: DesignCourseAppTheme.darkerText,
+              color: AppTheme.darkerText,
             ),
           ),
         ),
@@ -87,9 +87,9 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
         const SizedBox(
           height: 16,
         ),
-        CategoryListView(
+        FilterListView(
           callBack: () {
-            moveTo();
+            //moveTo();
           },
         ),
       ],
@@ -110,13 +110,13 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
               fontWeight: FontWeight.w600,
               fontSize: 22,
               letterSpacing: 0.27,
-              color: DesignCourseAppTheme.darkerText,
+              color: AppTheme.darkerText,
             ),
           ),
           Flexible(
-            child: PopularCourseListView(
+            child: TodasDisciplinaListView(
               callBack: () {
-                moveTo();
+                //moveTo();
               },
             ),
           )
@@ -125,14 +125,7 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
     );
   }
 
-  void moveTo() {
-    Navigator.push<dynamic>(
-      context,
-      MaterialPageRoute<dynamic>(
-        builder: (BuildContext context) => CourseInfoScreen(),
-      ),
-    );
-  }
+
 
   Widget getButtonUI(CategoryType categoryTypeData, bool isSelected) {
     String txt = '';
@@ -147,10 +140,10 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
       child: Container(
         decoration: BoxDecoration(
             color: isSelected
-                ? DesignCourseAppTheme.nearlyBlue
-                : DesignCourseAppTheme.nearlyWhite,
+                ? AppTheme.nearlyBlue
+                : AppTheme.nearlyWhite,
             borderRadius: const BorderRadius.all(Radius.circular(24.0)),
-            border: Border.all(color: DesignCourseAppTheme.nearlyBlue)),
+            border: Border.all(color: AppTheme.nearlyBlue)),
         child: Material(
           color: Colors.transparent,
           child: InkWell(
@@ -173,8 +166,8 @@ class _DesignCourseHomeScreenState extends State<DesignCourseHomeScreen> {
                     fontSize: 12,
                     letterSpacing: 0.27,
                     color: isSelected
-                        ? DesignCourseAppTheme.nearlyWhite
-                        : DesignCourseAppTheme.nearlyBlue,
+                        ? AppTheme.nearlyWhite
+                        : AppTheme.nearlyBlue,
                   ),
                 ),
               ),

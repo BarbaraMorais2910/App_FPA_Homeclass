@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'design_course_app_theme.dart';
+import 'app_theme.dart';
+import 'package:app_educa_pc/pages/disciplina_lib/models/questoes.dart';
 
-class CourseInfoScreen extends StatefulWidget {
+class DisciplinaInfoScreen extends StatefulWidget {
+  const DisciplinaInfoScreen({Key key, this.disciplina}): super(key: key);
+  final Questoes disciplina;
+
   @override
-  _CourseInfoScreenState createState() => _CourseInfoScreenState();
+  _DisciplinaInfoScreenState createState() => _DisciplinaInfoScreenState();
 }
 
-class _CourseInfoScreenState extends State<CourseInfoScreen>
+class _DisciplinaInfoScreenState extends State<DisciplinaInfoScreen>
     with TickerProviderStateMixin {
+
+
   final double infoHeight = 364.0;
   AnimationController animationController;
   Animation<double> animation;
@@ -23,6 +29,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
         curve: Interval(0, 1.0, curve: Curves.fastOutSlowIn)));
     setData();
     super.initState();
+
   }
 
   Future<void> setData() async {
@@ -43,11 +50,15 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
 
   @override
   Widget build(BuildContext context) {
+
+    print("Mouglas:");
+    print(widget.disciplina.titulo);
+
     final double tempHeight = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).size.width / 1.2) +
         24.0;
     return Container(
-      color: DesignCourseAppTheme.nearlyWhite,
+      color: AppTheme.nearlyWhite,
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Stack(
@@ -67,13 +78,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
               right: 0,
               child: Container(
                 decoration: BoxDecoration(
-                  color: DesignCourseAppTheme.nearlyWhite,
+                  color: AppTheme.nearlyWhite,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(32.0),
                       topRight: Radius.circular(32.0)),
                   boxShadow: <BoxShadow>[
                     BoxShadow(
-                        color: DesignCourseAppTheme.grey.withOpacity(0.2),
+                        color: AppTheme.grey.withOpacity(0.2),
                         offset: const Offset(1.1, 1.1),
                         blurRadius: 10.0),
                   ],
@@ -95,13 +106,13 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                             padding: const EdgeInsets.only(
                                 top: 32.0, left: 18, right: 16),
                             child: Text(
-                              'Dinâmica dos Movimentos das Estruturas Condicionais\n',
+                              widget.disciplina.titulo+'\n',
                               textAlign: TextAlign.left,
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 22,
                                 letterSpacing: 0.27,
-                                color: DesignCourseAppTheme.darkerText,
+                                color: AppTheme.darkerText,
                               ),
                             ),
                           ),
@@ -116,8 +127,8 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                               padding: const EdgeInsets.all(8),
                               child: Row(
                                 children: <Widget>[
-                                  getTimeBoxUI('Público alvo', '7º ano'),
-                                  getTimeBoxUI('Duração', '1h'),
+                                  getTimeBoxUI('Público alvo', widget.disciplina.ano+'º ano'),
+                                  getTimeBoxUI('Duração', widget.disciplina.duracao+'h'),
                                 ],
                               ),
                             ),
@@ -130,7 +141,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                                 padding: const EdgeInsets.only(
                                     left: 16, right: 16, top: 8, bottom: 8),
                                 child: Text(
-                                  'Inicialmente. Os professores deverão confeccionar os Cards com as ações a serem executadas, utilizando o (SE; SENÃO). Execução. O professor deverá falar uma ação a ser realizada associado a alguma estrutura condicional, (SE; SENÃO), em seguida os alunos deverão reproduzir, quem executar o que foi solicitado pelo professor permanece na dinâmica, quem errar será eliminado da dinâmica. À vista disso, ganha a atividade aquele que chegar ao final sem errar nenhuma instrução. Exemplo 1: “ SE eu bater as mãos, então vocês batem os pés”; Exemplo 2: “SE eu NÃO bater os pés, vocês podem pular”; Integração. Os alunos eliminados podem sugerir desafios para a dinâmica, assim, ampliando a quantidade de Cards por meio da criatividade dos alunos.',
+                                  widget.disciplina.questao,
                                   textAlign: TextAlign.justify,
                            /*       style: TextStyle(
                                     fontWeight: FontWeight.w200,
@@ -163,11 +174,11 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          color: DesignCourseAppTheme.nearlyWhite,
+          color: AppTheme.nearlyWhite,
           borderRadius: const BorderRadius.all(Radius.circular(16.0)),
           boxShadow: <BoxShadow>[
             BoxShadow(
-                color: DesignCourseAppTheme.grey.withOpacity(0.2),
+                color: AppTheme.grey.withOpacity(0.2),
                 offset: const Offset(1.1, 1.1),
                 blurRadius: 8.0),
           ],
@@ -186,7 +197,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   fontWeight: FontWeight.w600,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: DesignCourseAppTheme.nearlyBlue,
+                  color: AppTheme.nearlyBlue,
                 ),
               ),
               Text(
@@ -196,7 +207,7 @@ class _CourseInfoScreenState extends State<CourseInfoScreen>
                   fontWeight: FontWeight.w200,
                   fontSize: 14,
                   letterSpacing: 0.27,
-                  color: DesignCourseAppTheme.grey,
+                  color: AppTheme.grey,
                 ),
               ),
             ],

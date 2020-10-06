@@ -1,17 +1,17 @@
-import 'design_course_app_theme.dart';
-import 'models/category.dart';
+import 'app_theme.dart';
+import 'models/disciplina.dart';
 import 'package:app_educa_pc/main.dart';
 import 'package:flutter/material.dart';
 
-class CategoryListView extends StatefulWidget {
-  const CategoryListView({Key key, this.callBack}) : super(key: key);
+class FilterListView extends StatefulWidget {
+  const FilterListView({Key key, this.callBack}) : super(key: key);
 
   final Function callBack;
   @override
-  _CategoryListViewState createState() => _CategoryListViewState();
+  _FilterListViewState createState() => _FilterListViewState();
 }
 
-class _CategoryListViewState extends State<CategoryListView>
+class _FilterListViewState extends State<FilterListView>
     with TickerProviderStateMixin {
   AnimationController animationController;
 
@@ -43,12 +43,12 @@ class _CategoryListViewState extends State<CategoryListView>
               return ListView.builder(
                 padding: const EdgeInsets.only(
                     top: 0, bottom: 0, right: 16, left: 16),
-                itemCount: Category.categoryList.length,
+                itemCount: Disciplina.disciplinaList.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
-                  final int count = Category.categoryList.length > 10
+                  final int count = Disciplina.disciplinaList.length > 10
                       ? 10
-                      : Category.categoryList.length;
+                      : Disciplina.disciplinaList.length;
                   final Animation<double> animation =
                       Tween<double>(begin: 0.0, end: 1.0).animate(
                           CurvedAnimation(
@@ -57,8 +57,8 @@ class _CategoryListViewState extends State<CategoryListView>
                                   curve: Curves.fastOutSlowIn)));
                   animationController.forward();
 
-                  return CategoryView(
-                    category: Category.categoryList[index],
+                  return DisciplinaView(
+                    disciplina: Disciplina.disciplinaList[index],
                     animation: animation,
                     animationController: animationController,
                     callback: () {
@@ -75,17 +75,17 @@ class _CategoryListViewState extends State<CategoryListView>
   }
 }
 
-class CategoryView extends StatelessWidget {
-  const CategoryView(
+class DisciplinaView extends StatelessWidget {
+  const DisciplinaView(
       {Key key,
-      this.category,
+      this.disciplina,
       this.animationController,
       this.animation,
       this.callback})
       : super(key: key);
 
   final VoidCallback callback;
-  final Category category;
+  final Disciplina disciplina;
   final AnimationController animationController;
   final Animation<dynamic> animation;
 
@@ -134,14 +134,13 @@ class CategoryView extends StatelessWidget {
                                             padding:
                                                 const EdgeInsets.only(top: 16),
                                             child: Text(
-                                              category.title,
+                                              disciplina.title,
                                               textAlign: TextAlign.left,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
-                                                color: DesignCourseAppTheme
-                                                    .darkerText,
+                                                color: AppTheme.darkerText,
                                               ),
                                             ),
                                           ),
@@ -158,92 +157,10 @@ class CategoryView extends StatelessWidget {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: <Widget>[
-                                                /*Text(
-                                                  '${category.lessonCount} lesson',
-                                                  textAlign: TextAlign.left,
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w200,
-                                                    fontSize: 12,
-                                                    letterSpacing: 0.27,
-                                                    color: DesignCourseAppTheme
-                                                        .grey,
-                                                  ),
-                                                ),*/
-                               /*                 Container(
-                                                  child: Row(
-                                                    children: <Widget>[
-                                                      Text(
-                                                        '${category.rating}',
-                                                        textAlign:
-                                                            TextAlign.left,
-                                                        style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.w200,
-                                                          fontSize: 18,
-                                                          letterSpacing: 0.27,
-                                                          color:
-                                                              DesignCourseAppTheme
-                                                                  .grey,
-                                                        ),
-                                                      ),
-                                                      Icon(
-                                                        Icons.star,
-                                                        color:
-                                                            DesignCourseAppTheme
-                                                                .nearlyBlue,
-                                                        size: 20,
-                                                      ),
-                                                    ],
-                                                  ),
-                                                )*/
+                                                Text("Agora"),
                                               ],
                                             ),
                                           ),
-                                       /*   Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 16, right: 16),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: <Widget>[
-                                                Text(
-                                                  '\$${category.money}',
-                                                  textAlign: TextAlign.left,
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w600,
-                                                    fontSize: 18,
-                                                    letterSpacing: 0.27,
-                                                    color: DesignCourseAppTheme
-                                                        .nearlyBlue,
-                                                  ),
-                                                ),
-                                                Container(
-                                                  decoration: BoxDecoration(
-                                                    color: DesignCourseAppTheme
-                                                        .nearlyBlue,
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                            Radius.circular(
-                                                                8.0)),
-                                                  ),
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            4.0),
-                                                    child: Icon(
-                                                      Icons.add,
-                                                      color:
-                                                          DesignCourseAppTheme
-                                                              .nearlyWhite,
-                                                    ),
-                                                  ),
-                                                )
-                                              ],
-                                            ),
-                                          ),*/
                                         ],
                                       ),
                                     ),
@@ -266,7 +183,7 @@ class CategoryView extends StatelessWidget {
                                   const BorderRadius.all(Radius.circular(16.0)),
                               child: AspectRatio(
                                   aspectRatio: 1.0,
-                                  child: Image.asset(category.imagePath)),
+                                  child: Image.asset(disciplina.imagePath)),
                             )
                           ],
                         ),

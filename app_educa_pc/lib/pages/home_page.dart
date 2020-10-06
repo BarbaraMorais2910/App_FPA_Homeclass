@@ -52,9 +52,9 @@ class HomePageState extends State<HomePage> {
   int _selecionado = 0;
   _carregaFragmento(int carrega) {
     switch(carrega) {
-      case 0: return new fragmentoOne();
-      case 1: return new DesignCourseHomeScreen();
-      case 2: return new fragmentoTree();
+      case 0: return new PaginaInicial();
+      case 1: return new PaginaDisciplina();
+      case 2: return new PaginaSair();
       default: return new Text('Essa página não existe');
     }
   }
@@ -71,15 +71,7 @@ class HomePageState extends State<HomePage> {
             new UserAccountsDrawerHeader(
                 accountName: new Text("Alguem"),
                 currentAccountPicture: new CircleAvatar(
-                  backgroundImage: new AssetImage("images/user.png"),
-                ),
-                decoration: new BoxDecoration(
-                    image: new DecorationImage(
-                        colorFilter: ColorFilter.mode(Colors.black87,
-                            BlendMode.multiply),
-                        fit: BoxFit.fill,
-                        image: new NetworkImage("https://super.abril.com.br/wp-content/uploads/2018/07/570fb60f0e2163161500acbe1-1254567507deec.jpeg")
-                    )
+                  backgroundImage: new AssetImage("assets/images/user.png"),
                 ),
                 accountEmail: new Text("alguem@gmail.com")),
             new Column(
