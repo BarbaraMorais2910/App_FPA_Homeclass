@@ -1,4 +1,4 @@
-# app_educa_pc
+# App_HomeClass
 Aplicativo educacional que contém atividades práticas multidisciplinares que ajudam no desenvolvimento do pensamento computacional dos alunos.
 
 Resumo do aplicativo
