@@ -19,13 +19,13 @@ class Questoes{
   String getPath(){
 
     String caminho='';
-    if (this.tipo=='matematica'){
+    if (this.tipo=='Matemática'){
         caminho='assets/design_course/matematica.png';
     }
-    else if(this.tipo=='portugues'){
+    else if(this.tipo=='Português'){
       caminho='assets/design_course/portugues.png';
     }
-    else if(this.tipo=='quimica'){
+    else if(this.tipo=='Química'){
       caminho='assets/design_course/quimica.png';
     }
 
@@ -33,7 +33,8 @@ class Questoes{
   }
 
   factory Questoes.fromJson(Map<String, dynamic> json) {
-    return Questoes(
+
+      return Questoes(
       titulo: json['titulo'],
       ano: json['ano'],
       duracao: json['duracao'],

@@ -50,9 +50,7 @@ class _DisciplinaInfoScreenState extends State<DisciplinaInfoScreen>
 
   @override
   Widget build(BuildContext context) {
-
-    print("Mouglas:");
-    print(widget.disciplina.titulo);
+    //print(widget.disciplina.titulo);
 
     final double tempHeight = MediaQuery.of(context).size.height -
         (MediaQuery.of(context).size.width / 1.2) +

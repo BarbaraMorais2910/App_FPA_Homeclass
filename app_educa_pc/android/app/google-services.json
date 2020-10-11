@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "986062974892",
+    "firebase_url": "https://appeducadb.firebaseio.com",
+    "project_id": "appeducadb",
+    "storage_bucket": "appeducadb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986062974892:android:0f8209f233e6a8a57fd409",
+        "android_client_info": {
+          "package_name": "com.projeto.appeduca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986062974892-ufg6gcakfjmavoc7scack02fi3cnpgd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwGjcSPXiJQJihjaRR_C7FmRxxI5Pzno8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986062974892-ufg6gcakfjmavoc7scack02fi3cnpgd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
   final menuItens = [
     new MenuItem("Home", Icons.home),
-    new MenuItem("Disciplinas", Icons.info),
+    new MenuItem("Disciplinas", Icons.add_to_photos),
     new MenuItem("Sair", Icons.people)
   ];
 

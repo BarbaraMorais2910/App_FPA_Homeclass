@@ -9,7 +9,7 @@ void showAlertDialog(BuildContext context) {
   // set up the button
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () { },
+    onPressed: () => Navigator.pop(context),
   );
 
   // set up the AlertDialog
@@ -212,7 +212,7 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                           Padding(
                             padding: const EdgeInsets.only(
                                 left: 16, right: 16, bottom: 8, top: 22),
-                            child: Text('Atividade:',
+                            child: Text('Disciplina:',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
@@ -231,19 +231,21 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                                     left: 16, right: 16, top: 1, bottom: 1),
                                 child: new DropdownButton<String>(
                                   value: dropdownValue,
+                                  icon: Icon(Icons.keyboard_arrow_down),
                                   iconSize: 24,
                                   elevation: 18,
                                   onChanged: (String newValue) {
                                     setState(() {
                                       dropdownValue = newValue;
-                                      print("Selecionado: "+dropdownValue);
+                                      //print("Selecionado: "+dropdownValue);
                                     });
                                   },
-                                  items: <String>['matematica', 'portugues', 'quimica']
-                                      .map<DropdownMenuItem<String>>((String value) {
+
+                                  items: <List>[['matematica','Matemática'], ['portugues','Português'], ['quimica','Química']]
+                                      .map<DropdownMenuItem<String>>((List value) {
                                     return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
+                                      value: value[0],
+                                      child: Text(value[1]),
                                     );
                                   }).toList(),
                                 ),
@@ -254,7 +256,7 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                           Padding(
                             padding: const EdgeInsets.only(
                                 left: 16, right: 16, bottom: 8, top: 22),
-                            child: Text('Questão:',
+                            child: Text('Atividade:',
                               style: TextStyle(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 16,
@@ -273,7 +275,7 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                                 child: new TextFormField(controller: _contrQuestao,
                                   validator: (val) {
                                     return val.isEmpty
-                                        ? "Digite a questão"
+                                        ? "Digite a atividade"
                                         : null;
                                   },
                                 ),
@@ -305,7 +307,7 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                                     final String tipo = _contrTipo.text;
                                     final String questao = _contrQuestao.text;
 
-                                    http.post("https://appeducadb.firebaseio.com/appeducadb.json",
+                                    http.post("https://appeducadb.firebaseio.com/atividades.json",
                                         body: json.encode({
                                           'titulo': titulo,
                                           'ano': ano,
@@ -315,7 +317,7 @@ class _FormDisciplinaScreenState extends State<FormDisciplinaScreen>
                                         }));
 
                                     showAlertDialog(context);
-                                    print("Mandado: "+dropdownValue);
+                                    //print("Mandado: "+dropdownValue);
 
                                   },
                                 )

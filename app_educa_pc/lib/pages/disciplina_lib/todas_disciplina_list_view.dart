@@ -12,7 +12,7 @@ import 'package:app_educa_pc/pages/disciplina_lib/disciplina_info_screen.dart';
 
 Future<List<Questoes>> fetchQuestoes() async {
   final response =
-  await http.get('https://appeducadb.firebaseio.com/appeducadb.json?');
+  await http.get('https://appeducadb.firebaseio.com/atividades.json?');
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
@@ -22,11 +22,20 @@ Future<List<Questoes>> fetchQuestoes() async {
       List<Questoes> questoes=new List<Questoes>();
 
       extractedData.forEach((key, value) {
+
+        String tipo;
+        final lista=[['matematica','Matemática'], ['portugues','Português'], ['quimica','Química']];
+        for(var i=0; i<lista.length; i++){
+          if(value['tipo']==lista[i][0]){
+            tipo=lista[i][1];
+          }
+        }
+
         questoes.add(Questoes(
           titulo: value['titulo'],
           ano: value['ano'],
           duracao: value['duracao'],
-          tipo: value['tipo'],
+          tipo: tipo,
           questao: value['questao'],
         ));
       });
@@ -170,6 +179,16 @@ class DisciplinaView extends StatelessWidget {
       );
     }
 
+
+
+    String screenTitulo;
+    if(disciplina.titulo.length>20){
+      screenTitulo=disciplina.titulo.substring(0,20)+'...';
+    }
+    else{
+      screenTitulo=disciplina.titulo+'...';
+    }
+
     return AnimatedBuilder(
       animation: animationController,
       builder: (BuildContext context, Widget child) {
@@ -215,6 +234,20 @@ class DisciplinaView extends StatelessWidget {
                                                 fontSize: 16,
                                                 letterSpacing: 0.27,
                                                 color: AppTheme.darkerText,
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 16, left: 16, right: 16),
+                                            child: Text(
+                                              screenTitulo,
+                                              textAlign: TextAlign.right,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.w600,
+                                                fontSize: 14,
+                                                letterSpacing: 0.27,
+                                                color: AppTheme.nearlyBlack,
                                               ),
                                             ),
                                           ),
