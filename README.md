@@ -7,9 +7,9 @@ Todas as atividades são de cunho tecnológico com objetivo de despertar no alun
  
 Competências Educacionais:
 
--[x] Pilares da Programação
--[x] Multidisciplinaridade
--[x] Desenvolvimento Cognitvo
+- [x] Pilares da Programação
+- [x] Multidisciplinaridade
+- [x] Desenvolvimento Cognitvo
 
 Logo 
  
