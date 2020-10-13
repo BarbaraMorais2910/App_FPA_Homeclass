@@ -14,7 +14,7 @@ __Competências Educacionais__:
 - [x] Multidisciplinaridade
 - [x] Desenvolvimento Cognitvo
 
-Logo 
+__Logo__ 
  
 ![](app_educa_pc/assets/icon.png)
 
