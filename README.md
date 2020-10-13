@@ -21,76 +21,35 @@ Logo
 
 __Tela Inicial Externa: Login__
 O usuário faz o login, ou o cadastro caso seja novo usuário
-<img width="300" alt="portfolio_view" src="app_educa_pc/assets/login.png">
 
-
-
-
-
-
-
-
-
-
-
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/login.png">
 
 
 
 __Tela de Formulário: Formulário de Cadastro do Usuário__
 O usuário faz o seu cadastro com informações básicas. 
-<img width="300" alt="portfolio_view" src="app_educa_pc/assets/cadastro.png">
 
-
-
-
-
-
-
-
-
-
-
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/cadastro.png">
 
 
 
 __Tela Interna: Home Informações sobre as Atividades:__
 Essa tela possui o botão de cadastramento das atividades, e segue para tela seguinte.
-<img width="300" alt="portfolio_view" src="app_educa_pc/assets/home.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/home.png">
 
 
 
 __Tela Interna: Formulário de Cadastro de Novas Atividade__
-<img width="300" alt="portfolio_view" src="app_educa_pc/assets/disciplina.png">
+
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/disciplina.png">
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<img width="300" alt="portfolio_view" src="app_educa_pc/assets/Captura de tela de 2020-09-07 14-21-15.png">
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/Captura de tela de 2020-09-07 14-21-15.png">
 
 
 
