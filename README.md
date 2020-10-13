@@ -23,6 +23,7 @@ __Logo__
 
 
 __Tela Inicial Externa: Login__
+
 O usuário faz o login, ou o cadastro caso seja novo usuário
 
 <img width="200" alt="portfolio_view" src="app_educa_pc/assets/login.png">
@@ -30,6 +31,7 @@ O usuário faz o login, ou o cadastro caso seja novo usuário
 
 
 __Tela de Formulário: Formulário de Cadastro do Usuário__
+
 O usuário faz o seu cadastro com informações básicas. 
 
 <img width="200" alt="portfolio_view" src="app_educa_pc/assets/cadastro.png">
