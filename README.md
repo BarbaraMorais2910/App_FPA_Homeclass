@@ -16,6 +16,8 @@ Logo
 ![](app_educa_pc/assets/icon.png)
 
 __Tela Inicial__
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/disciplina.png">
+
 
 
 ![](app_educa_pc/assets/disciplina.png)
