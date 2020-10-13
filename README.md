@@ -21,9 +21,16 @@ O usuário faz o login, ou o cadastro caso seja novo usuário
 
 
 
+
+
+
+
 __Tela de Formulário: Formulário de Cadastro do Usuário__
 O usuário faz o seu cadastro com informações básicas. 
 <img width="300" alt="portfolio_view" src="app_educa_pc/assets/cadastro.png">
+
+
+
 
 
 __Tela Interna: Home Informações sobre as Atividades:__
@@ -31,9 +38,19 @@ Essa tela possui o botão de cadastramento das atividades, e segue para tela seg
 <img width="300" alt="portfolio_view" src="app_educa_pc/assets/home.png">
 
 
+
+
+
 __Tela Interna: Formulário de Cadastro de Novas Atividade__
 <img width="300" alt="portfolio_view" src="app_educa_pc/assets/disciplina.png">
+
+
+
+
+
+
 <img width="300" alt="portfolio_view" src="app_educa_pc/assets/disciplina.png">
+
 
 
 
