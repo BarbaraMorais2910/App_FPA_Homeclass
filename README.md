@@ -14,3 +14,9 @@ __Competências Educacionais__:
 Logo 
  
 ![](app_educa_pc/assets/icon.png)
+
+__Tela Inicial__
+
+
+![](app_educa_pc/assets/disciplina.png)
+
