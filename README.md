@@ -47,9 +47,22 @@ __Tela Interna: Formulário de Cadastro de Novas Atividade__
 
 
 
+__Tela de Pesquisa: Navegação de Telas:__
+O usuário pode entrar nas disciplinas, ou home ou sair do aplicativo
 
 
 <img width="200" alt="portfolio_view" src="app_educa_pc/assets/Captura de tela de 2020-09-07 14-21-15.png">
+
+__Tela Interna: Principal das Diciplinas e atividades__
+O usuário acessa todas as disciplinas com suas respectivas atividades. 
+
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/2020-10-11 (2).png">
+
+__Tela Interna: Atividades__
+A atividade cadastrada nas disciplinas,todas com abordagens para o desenvolvimento do Pensamento Computacional. 
+
+<img width="200" alt="portfolio_view" src="app_educa_pc/assets/2020-10-11 (6).png">
+
 
 
 
